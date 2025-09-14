@@ -6,9 +6,11 @@ import android.content.Context
 import android.content.pm.PackageManager
 import android.graphics.*
 import android.media.Image
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.WindowInsetsController
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageAnalysis
@@ -44,6 +46,7 @@ class ObjectDetectionRealTimeActivity : AppCompatActivity() {
         private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
     }
 
+    @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityObjectDetectionRealTimeBinding.inflate(layoutInflater)
